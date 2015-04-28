@@ -1,0 +1,41 @@
+/*
+Betha CSS File
+
+This is the main container to style css
+*/
+
+/******************************************
+Reset File
+*/
+
+
+/******************************************
+Import Bootstrap
+*/
+@import url('bootstrap-theme.min.css');
+
+/******************************************
+Import typography
+*/
+
+
+/******************************************
+Basic HTML Elements
+*/
+
+
+/******************************************
+Structure
+*/
+
+.header {
+	
+}
+
+.block-mainnav {}
+
+.block-mainnav .navbar-toggle {
+	width: 96%;
+	margin-left: 2%;
+	margin-right: 2%;
+}

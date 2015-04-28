@@ -1,0 +1,24 @@
+/*
+Betha CSS File
+
+This is the theme container to style css
+*/
+
+/******************************************
+Import typography
+*/
+
+
+/******************************************
+Basic HTML Elements
+*/
+
+
+/******************************************
+Visual
+*/
+
+/* header*/
+.header{
+	background: #9e1414 url(../images/bgs/bg.header.portobelo.png) top left no-repeat;
+}
