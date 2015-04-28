@@ -42,3 +42,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 docs/percurso cognitivo/~$rcurso cognitivo.01.docx
+*.buildpath
+.project
+.settings
