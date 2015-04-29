@@ -1,0 +1,12 @@
+<tr ng-repeat="parcela in iptu.parcelas">
+	<td class="table-cell cell-parcela"><input type="checkbox"
+		name="parcela[]" ng-model="iptuGrid.selectedParcelas[iptu.ID][parcela.numero]" ng-checked="iptuGrid.selectedIptus[iptu.ID]" value="{{parcela.numero}}"></td>
+	<td class="table-cell cell-number">{{(parcela.numero + 1) | numberFixedLen: 2}}</td>
+	<td class="table-cell cell-date">{{iptuGrid.getDate(parcela.data)}}</td>
+	<td class="table-cell cell-value">{{parcela.valor | currency: 'R$ ' : 2}}</td>
+	<td class="table-cell cell-status"><spam
+			class="btn-icon " ng-class="parcela.status == 1 ? 'btn-status-good' : (parcela.status == 2 ? 'btn-status-bad' : 'btn-status-outdated')">{{iptuGrid.checkStatusCode(parcela.status)}}</spam></td>
+	<td class="table-cell cell-print"><a
+		class="btn-icon btn-download" href="" ng-click="iptuGrid.baixarGuiasSelecionadas({ parcela: parcela.numero, iptu: iptu.ID })"
+		title="Baixar esta parcela"></a></td>
+</tr>

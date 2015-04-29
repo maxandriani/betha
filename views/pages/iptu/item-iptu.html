@@ -1,0 +1,154 @@
+<li class="grid-item grid-item-id-{{iptu.ID}}" ng-class="{'extended': iptuGrid.gridExtended[iptu.ID]}" ng-repeat="iptu in iptuGrid.iptuList">
+	<!-- Grid-item content -->
+	<div class="grid-item-content row">
+		<!-- primary information -->
+		<div class="col-md-4 grid-item-primary">
+
+			<!-- controll tools -->
+			<div class="grid-cell cell-size-1 cell-control-tools">
+				<!-- check -->
+				<input class="checkbox tool" type="checkbox"
+					name="check-grid-item[]" ng-model="iptuGrid.selectedIptus[iptu.ID]" ng-checked="iptuGrid.selectedIptus[iptu.ID]" value="{{iptu.ID}}">
+
+				<!-- expand -->
+				<a href="" class="expand-icon tool" ng-click="iptuGrid.extendIptu(iptu.ID)" title="Exibir/Ocultar parcelas"></a>
+			</div>
+
+			<!-- im�vel info -->
+			<div class="grid-cell cell-fluid cell-imovel">
+
+				<!-- thumb -->
+				<img class="thumb" alt="Foto da fachada do im�vel"
+					ng-src="{{iptu.thumbnail}}">
+
+				<!-- Im�vel cell -->
+				<div class="cell-header">Imóvel</div>
+
+				<!-- Im�vel -->
+				<div class="cell-value">{{iptu.endereco}}, nº {{iptu.numero}}</div>
+
+			</div>
+
+		</div>
+
+		<!-- secondary info -->
+		<div class="col-md-8 grid-item-secondary">
+
+			<!-- Inscricao imobili�ria -->
+			<div class="grid-cell cell-size-3 cell-inscricaoimobiliaria">
+
+				<!-- Im�vel cell -->
+				<div class="cell-header">Inscrição imobiliária</div>
+
+				<!-- Im�vel -->
+				<div class="cell-value">{{iptu.inscricao_imobiliaria}}</div>
+
+			</div>
+
+			<!-- Ano -->
+			<div class="grid-cell cell-size-1 cell-year">
+
+				<!-- Im�vel cell -->
+				<div class="cell-header">Ano</div>
+
+				<!-- Im�vel -->
+				<div class="cell-value">{{iptu.ano}}</div>
+
+			</div>
+
+			<!-- Status -->
+			<div class="grid-cell cell-size-2 cell-status" ng-class="iptu.status_code == 1 ? 'status-good' : (iptu.status_code == 2 ? 'status-bad' : 'status-outdated')">
+
+
+				<!-- Im�vel cell -->
+				<div class="cell-header">Situação</div>
+
+				<!-- Im�vel -->
+				<div class="cell-value">{{iptuGrid.checkStatusCode(iptu.status_code)}}</div>
+
+			</div>
+
+			<!-- Ano -->
+			<div class="grid-cell cell-size-2 cell-total" ng-class="iptu.status_code == 1 ? 'status-good' : (iptu.status_code == 2 ? 'status-bad' : 'status-outdated')">
+
+				<!-- Im�vel cell -->
+				<div class="cell-header">Total</div>
+
+				<!-- Im�vel -->
+				<div class="cell-value">{{iptu.imposto_predial + iptu.imposto_territorial | currency : 'R$ ' : 2}}</div>
+
+			</div>
+
+			<!-- tools content -->
+			<ul class="grid-cell cell-size-4 cell-tools">
+				<li>
+					<button class="btn btn-default btn-icon btn-parcelas" ng-click="iptuGrid.extendIptu(iptu.ID)">
+						<span class="expanded">Ocultar parcelas</span><span
+							class="collapsed">Exibir parcelas</span>
+					</button>
+				</li>
+				<li>
+					<button ng-click="iptuGrid.baixarGuiasSelecionadas(iptu)" class="btn btn-default btn-icon btn-download"></button>
+				</li>
+			</ul>
+			<!-- // tools content -->
+		</div>
+	</div> <!-- // Grid-item content --> <!-- Extended -->
+	<div class="grid-extended row">
+
+		<!-- Information -->
+		<div class="col-sm-4 iptu-information">
+			<table class="table iptu-data">
+
+				<caption>Dados de cobrança</caption>
+
+				<tr>
+					<th class="table-cell cell-label">Área do terreno:</th>
+					<td class="table-cell cell-value">{{iptu.area}} m²</td>
+				</tr>
+				<tr>
+					<th class="table-cell cell-label">Área total construída:</th>
+					<td class="table-cell cell-value">{{iptu.area_construida}} m²</td>
+				</tr>
+				<tr>
+					<th class="table-cell cell-label">Área construída da unidade:</th>
+					<td class="table-cell cell-value">{{iptu.area_unidade}} m²</td>
+				</tr>
+				<tr>
+					<th class="table-cell cell-label">Imposto predial:</th>
+					<td class="table-cell cell-value">{{iptu.imposto_predial | currency : 'R$ ' : 2}}</td>
+				</tr>
+				<tr>
+					<th class="table-cell cell-label">Imposto territorial:</th>
+					<td class="table-cell cell-value">{{iptu.imposto_territorial | currency : 'R$ ' : 2}}</td>
+				</tr>
+			</table>
+		</div>
+		<!-- // Information -->
+
+		<!-- Parcelas -->
+		<div class="col-sm-8 iptu-parcelas">
+			<table class="table table-parcelas">
+
+				<caption>Parcelas</caption>
+
+				<tbody data-iptu-parcelas-loop>
+					<!-- item-parcela.html -->
+				</tbody>
+				<tfoot>
+					<tr>
+						<td class="cell-label" colspan="4">Total</td>
+						<td class="cell-value" colspan="2">{{(iptu.imposto_predial + iptu.imposto_territorial) | currency: 'R$ ' : 2}}</td>
+					</tr>
+				</tfoot>
+			</table>
+
+
+			<button ng-click="iptuGrid.baixarParcelasSelecionadas(selectedParcelas[iptu.ID])" class="btn btn-default btn-icon btn-download">Baixar guias
+				selecionadas</button>
+
+		</div>
+		<!-- // Parcelas -->
+
+	</div> <!-- // Extended -->
+</li>

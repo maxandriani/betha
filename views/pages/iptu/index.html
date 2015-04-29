@@ -1,0 +1,43 @@
+<!-- breadcrumb -->
+<!-- page-title.html -->
+<!-- // breadcrumb -->
+
+<!-- Grid tools -->
+<div class="block-gridtools row">
+
+	<!-- left tools -->
+	<div class="col-sm-6 block-contribuinte">
+		<button ng-click="iptuGrid.alterarContribuinte()" class="btn btn-default btn-icon btn-contribuinte">Alterar</button>
+		<div class="info">
+			Exibindo guias de IPTU em aberto para o contribuínte<br> <span>{{iptuGrid.contribuinte}}</span>
+		</div>
+	</div>
+
+	<!-- filters -->
+	<div class="col-sm-6">
+		<ul class="gridtools-list">
+			<li><a href="" ng-click="iptuGrid.baixarTodasAsGuias()" class="btn btn-default btn-icon btn-download">Baixar
+					todas as guias</a></li>
+			<li><a href="" ng-click="iptuGrid.baixarGuiasSelecionadas(iptuGrid.selectedIptus)" class="btn btn-default btn-icon btn-download">Baixar
+					guias selecionadas</a></li>
+			<li><label class="btn btn-default btn-icon btn-anobase"> <select
+					class="" ng-model="iptuGrid.filterBaseYear" name="iptu-ano-base">
+						<option value="2015" selected>Ano base: 2015</option>
+						<option value="2014">Ano base: 2014</option>
+				</select>
+			</label></li>
+		</ul>
+	</div>
+
+</div>
+<!-- // Grid tools -->
+
+<!-- grid -->
+<ul class="block-grid" data-iptu-grid-loop>
+	<!-- iptu-item -->
+</ul>
+<!-- // grid -->
+
+<!-- summary-info -->
+<div data-global-summary></div>
+<!-- // summary-info -->

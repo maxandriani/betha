@@ -22,3 +22,31 @@ Visual
 .header{
 	background: #9e1414 url(../images/bgs/bg.header.portobelo.png) top left no-repeat;
 }
+
+.header .header-city .city-name * {
+	color: #f1f1f1;
+}
+
+.header .header-city .system-name {
+	color: #f1f1f1;
+}
+
+/* mainnav */
+.block-mainnav .navbar-default {
+	background: #e2e2e2 url(../images/bgs/bg.mainnav.jpg) bottom repeat-x;
+}
+
+.block-mainnav .navbar-default a {
+	background: none;
+}
+
+.block-mainnav .navbar-default .nav > li > a:hover {
+	color: #9e1414 !important;
+	background: none;
+}
+
+.block-mainnav .navbar-default .nav > li.active > a,
+.block-mainnav .navbar-default .nav > li.active > a:hover {
+	background: transparent url(../images/bgs/bg.mainnav.active.jpg) bottom repeat-x;
+	color: #9e1414;
+}

@@ -2,6 +2,8 @@
 session_cache_limiter ( false );
 session_start ();
 
+require '../config.php';
+
 define ( 'ERROR_INVALID_DATA_TYPE', 'Formato de dados inválido, veja nossa documentação para maiores informações' );
 define ( 'ERROR_IPTU_NOT_FOUND', 'Não encontramos IPTUs vinculados a esse documento, for favor, verifique os valores informados e tente novamente' );
 define ( 'ERROR_USERNAME_NOT_FOUND', 'Não encontramos servidores vinculados ao nome de usuário informado, for favor, verifique e tente novamente' );
@@ -43,6 +45,7 @@ $dataSource = array (
 		'inscricaoImobiliaria' => '010101707200020001',
 		'entidade' => '1',
 		'iptu_list' => array (),
+		'cidadao' => 'Jonas Brother',
 		'servidor' => array (
 				'ID' => '1',
 				'user' => 'jonas.brother',
@@ -55,9 +58,9 @@ $dataSource = array (
 for($i = 0; $i < 5; $i ++) {
 	$iptu = array (
 			'ID' => $i,
-			'name' => 'Jonas Brother',
 			'endereco' => 'Rua David Cota',
 			'numero' => rand ( 100, 300 ),
+			'inscricao_imobiliaria' => '010101707200020001',
 			'ano' => '2015',
 			'status_code' => rand ( 1, 3 ),
 			'status' => '',
@@ -66,7 +69,7 @@ for($i = 0; $i < 5; $i ++) {
 			'area_unidade' => 26.81,
 			'imposto_predial' => rand ( 200, 2000 ),
 			'imposto_territorial' => rand ( 100, 1000 ),
-			'thumbnail' => '/images/thumbs/imovel.jpg',
+			'thumbnail' => get_image_url ( 'thumbs/thumb.imovel.png' ),
 			'parcelas' => array () 
 	);
 	
@@ -212,7 +215,10 @@ $app->group ( '/iptu', function () use($app, $response, $dataSource) {
 						throw new Exception ( ERROR_IPTU_NOT_FOUND, 404 );
 					}
 					
-					$response->responseData ['data'] = $dataSource ['iptu_list'];
+					$iptu_data = new stdClass ();
+					$iptu_data->name = $dataSource ['cidadao'];
+					$iptu_data->iptuList = $dataSource ['iptu_list'];
+					$response->responseData ['data'] = $iptu_data;
 					
 					break;
 				
@@ -229,7 +235,10 @@ $app->group ( '/iptu', function () use($app, $response, $dataSource) {
 						throw new Exception ( ERROR_IPTU_NOT_FOUND, 404 );
 					}
 					
-					$response->responseData ['data'] = $dataSource ['iptu_list'];
+					$iptu_data = new stdClass ();
+					$iptu_data->name = $dataSource ['cidadao'];
+					$iptu_data->iptuList = $dataSource ['iptu_list'];
+					$response->responseData ['data'] = $iptu_data;
 					break;
 				
 				case 'cnpj' :
@@ -245,7 +254,10 @@ $app->group ( '/iptu', function () use($app, $response, $dataSource) {
 						throw new Exception ( ERROR_IPTU_NOT_FOUND, 404 );
 					}
 					
-					$response->responseData ['data'] = $dataSource ['iptu_list'];
+					$iptu_data = new stdClass ();
+					$iptu_data->name = $dataSource ['cidadao'];
+					$iptu_data->iptuList = $dataSource ['iptu_list'];
+					$response->responseData ['data'] = $iptu_data;
 					break;
 				
 				case 'entidade' :
@@ -259,7 +271,10 @@ $app->group ( '/iptu', function () use($app, $response, $dataSource) {
 						throw new Exception ( ERROR_IPTU_NOT_FOUND, 404 );
 					}
 					
-					$response->responseData ['data'] = $dataSource ['iptu_list'];
+					$iptu_data = new stdClass ();
+					$iptu_data->name = $dataSource ['cidadao'];
+					$iptu_data->iptuList = $dataSource ['iptu_list'];
+					$response->responseData ['data'] = $iptu_data;
 					break;
 				
 				default :

@@ -1,0 +1,24 @@
+<div class="block-summary row">
+	<div class="col-sm-4 col-sm-offset-8">
+		<table class="table table-summary">
+			<caption>Totais</caption>
+
+			<tbody>
+				<tr>
+					<th>Total em aberto</th>
+					<td>{{(iptuGrid.totalEmAberto) | currency: 'R$ ': 2}}</td>
+				</tr>
+
+				<tr>
+					<th>Total pago</th>
+					<td>{{(iptuGrid.totalPago) | currency: 'R$ ': 2}}</td>
+				</tr>
+
+				<tr>
+					<th>Saldo</th>
+					<td>{{(iptuGrid.saldo) | currency: 'R$ ': 2}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
