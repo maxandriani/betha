@@ -2,9 +2,12 @@
  * Angular Citizen Application
  */
 
-angular.module("citizenApp").controller("IptuGridController", ['$http', 'ModalService', function($http, ModalService){
+angular.module("citizenApp").controller("IptuGridController", ['$http', '$scope', '$routeParams', 'ModalService', function($http, $scope, $routeParams, ModalService){
 	// Jonas Brtoher
-	var restUrl = CONFIG.restUrl + '/iptu/cpf/06169363975';
+	var restUrl = CONFIG.restUrl + '/iptu/' + $routeParams.docType + '/' + $routeParams.doc + '/';
+	//var restUrl = CONFIG.restUrl + '/iptu/cpf/06169363975';
+	console.log(restUrl);
+	
 	var controller = this;
 	
 	this.iptuList = [];
@@ -16,6 +19,8 @@ angular.module("citizenApp").controller("IptuGridController", ['$http', 'ModalSe
 	this.totalEmAberto = 0;
 	this.totalPago = 0;
 	this.saldo = 0;
+	
+	$scope.page_title = 'Emitir Guias de IPTU';
 	
 	this.checkStatusCode = function(statusCode){
 		var status = '';
@@ -201,8 +206,36 @@ this.baixarGuiasSelecionadas = function(guias){
 			controller.iptuList = data.data.iptuList;
 			controller.calculate(controller.iptuList);
 		} else {
-			ERROR.setError(data.message, data.code, new Error(data.message));
+			ModalService.showModal({
+		  	      templateUrl: "views/global/modal-error.html",
+		  	      controller: "ModalConfirm",
+		  	      inputs: {
+		  	    	title: 'Erro',
+		  	  		message: data.message
+		  	  		}
+		  	    }).then(function(modal) {
+		  	      modal.element.modal();
+		  	      modal.close.then(function(result) {
+		  	    	  // do nothing
+		  	    	  window.location.hash="#/iptu/";
+		  	      });
+		  	    });
 		}
+	}).error(function(data){
+		ModalService.showModal({
+	  	      templateUrl: "views/global/modal-error.html",
+	  	      controller: "ModalConfirm",
+	  	      inputs: {
+	  	    	title: 'Erro',
+	  	  		message: data.message
+	  	  		}
+	  	    }).then(function(modal) {
+	  	      modal.element.modal();
+	  	      modal.close.then(function(result) {
+	  	    	  // do nothing
+	  	    	  window.location.hash="#/iptu/";
+	  	      });
+	  	    });
 	});
 	
 }]);

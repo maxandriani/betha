@@ -82,41 +82,7 @@ require './config.php';
 	<!-- // header -->
 
 	<!-- Main Navigation Block -->
-	<aside class="block-mainnav">
-
-		<!-- Static navbar -->
-		<nav class="navbar navbar-static-top navbar-default">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-						aria-controls="navbar">
-						<span class="sr-only">Abrir menu</span>
-
-						<!-- Text -->
-						<span class="pull-right">Abrir Menu</span>
-
-						<!-- Icons -->
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span>
-					</button>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="#/iptu">IPTU</a></li>
-						<li><a href="#/iss/">ISS</a></li>
-						<li><a href="#/certidoesNegativas/">Certidões Negativas</a></li>
-						<li><a href="#/guias">Guias</a></li>
-						<li><a href="#/alvaras">Alvarás</a></li>
-						<li><a href="#/validacao">Validação de documentos</a></li>
-					</ul>
-				</div>
-				<!--/.nav-collapse -->
-			</div>
-			<!--/.container-fluid -->
-		</nav>
-
-	</aside>
+	<aside class="block-mainnav" data-navbar></aside>
 	<!--// Main Navigation Block -->
 
 	<div class="container" ng-view>
@@ -140,7 +106,12 @@ require './config.php';
 	<script src="<?php the_url('js/routes.js') ?>"></script>
 	<script
 		src="<?php the_url('js/controllers/iptu-grid-controller.js') ?>"></script>
+	<script src="<?php the_url('js/controllers/navbar-controller.js') ?>"></script>
 	<script src="<?php the_url('js/controllers/modal-confirm.js') ?>"></script>
+	<script src="<?php the_url('js/controllers/not-implemented.js') ?>"></script>
+	<script
+		src="<?php the_url('js/controllers/iptu-login-controller.js') ?>"></script>
+	<script src="<?php the_url('js/directives/main-system.js') ?>"></script>
 	<script src="<?php the_url('js/directives/iptu-grid.js') ?>"></script>
 
 </body>

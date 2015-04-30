@@ -183,7 +183,7 @@ $app->group ( '/iptu', function () use($app, $response, $dataSource) {
 	} );
 	
 	// Get iptu with param :type and value :value
-	$app->get ( '/:type/:value', function ($type, $value) use($app, $response, $dataSource) {
+	$app->get ( '/:type/:value/', function ($type, $value) use($app, $response, $dataSource) {
 		
 		try {
 			// 200 OK

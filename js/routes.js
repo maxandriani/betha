@@ -5,37 +5,44 @@
 angular.module("citizenApp").config(function ($routeProvider, $controllerProvider) {
 
 	$routeProvider.when('/', {
-		redirectTo: '/iptu/listar/'
+		redirectTo: '/iptu/'
     });
 	
 	$routeProvider.when('/iptu/', {
-    	templateUrl: 'views/pages/iptu/login.html'
+    	templateUrl: 'views/pages/iptu/login.html',
+    	controller: 'IptuLoginController',
+    	controllerAs: 'login'
     });
 	
-	$routeProvider.when('/iptu/listar/', {
+	$routeProvider.when('/iptu/listar/:docType/:doc', {
     	templateUrl: 'views/pages/iptu/index.html',
     	controller: 'IptuGridController',
     	controllerAs: 'iptuGrid'
     });
 	
 	$routeProvider.when('/iss/', {
-    	templateUrl: 'views/pages/iss/index.html'
+    	templateUrl: 'views/global/not-implemented.html',
+    	controller: 'NotImplementedController'
     });
 	
 	$routeProvider.when('/certidoesNegativas/', {
-    	templateUrl: 'views/pages/certidoes/index.html'
+		templateUrl: 'views/global/not-implemented.html',
+    	controller: 'NotImplementedController'
     });
 	
 	$routeProvider.when('/guias/', {
-    	templateUrl: 'views/pages/guias/index.html'
+		templateUrl: 'views/global/not-implemented.html',
+    	controller: 'NotImplementedController'
     });
 	
 	$routeProvider.when('/alvaras/', {
-    	templateUrl: 'views/pages/alvaras/index.html'
+		templateUrl: 'views/global/not-implemented.html',
+    	controller: 'NotImplementedController'
     });
 	
 	$routeProvider.when('/validacao/', {
-    	templateUrl: 'views/pages/validacao/index.html'
+		templateUrl: 'views/global/not-implemented.html',
+    	controller: 'NotImplementedController'
     });
     
     $routeProvider.otherwise({
