@@ -83,12 +83,12 @@
 			<ul class="grid-cell cell-size-4 cell-tools">
 				<li>
 					<button class="btn btn-default btn-icon btn-parcelas" ng-click="iptuGrid.extendIptu(iptu.ID)">
-						<span class="expanded">Ocultar parcelas</span><span
-							class="collapsed">Exibir parcelas</span>
+						<span class="expanded">Ocultar</span><span
+							class="collapsed">Parcelas</span>
 					</button>
 				</li>
 				<li>
-					<button ng-click="iptuGrid.baixarGuiasSelecionadas(iptu)" class="btn btn-default btn-icon btn-download"></button>
+					<button ng-click="iptuGrid.baixarGuiasSelecionadas(iptu)" class="btn btn-default btn-icon btn-download">Baixar</button>
 				</li>
 			</ul>
 			<!-- // tools content -->
@@ -144,8 +144,7 @@
 			</table>
 
 
-			<button ng-click="iptuGrid.baixarParcelasSelecionadas(selectedParcelas[iptu.ID])" class="btn btn-default btn-icon btn-download">Baixar guias
-				selecionadas</button>
+			<button ng-click="iptuGrid.baixarParcelasSelecionadas(selectedParcelas[iptu.ID])" class="btn btn-default btn-icon btn-download">Baixar parcelas	selecionadas</button>
 
 		</div>
 		<!-- // Parcelas -->

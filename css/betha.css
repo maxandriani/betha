@@ -673,7 +673,7 @@ Unique cell behaviour
 }
 
 .block-grid > .grid-item .cell-tools .btn-download:before {
-	margin-right: 0;
+	/* margin-right: 0; */
 }
 
 .block-grid > .grid-item .cell-tools .btn-parcelas .expanded {
