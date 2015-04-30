@@ -8,7 +8,7 @@ angular.module("citizenApp").controller("IptuLoginController", ['$http', '$scope
 	
 	$scope.currentDocumentType = 'cpf';
 	$scope.currentDocumentValue = '';
-	$scope.page_title = 'Emitir Guias de IPTU';
+	$scope.page_title = 'Emitir carnês de IPTU';
 	
 	$scope.doc = {};
 	$scope.ERROR = {

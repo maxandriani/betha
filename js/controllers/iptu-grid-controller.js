@@ -20,7 +20,7 @@ angular.module("citizenApp").controller("IptuGridController", ['$http', '$scope'
 	this.totalPago = 0;
 	this.saldo = 0;
 	
-	$scope.page_title = 'Guias de IPTU';
+	$scope.page_title = 'Carnês de IPTU';
 	
 	this.checkStatusCode = function(statusCode){
 		var status = '';
