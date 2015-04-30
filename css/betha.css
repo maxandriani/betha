@@ -751,3 +751,43 @@ The summary
 }
 
 .block-summary .table-summary th {}
+
+/*
+IPTU LOGIN
+*/
+.block-login {
+	background: #efeff0;
+	border-radius: 1em;
+	padding: 1em;
+}
+
+.block-login h2 {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	font-weight: 400;
+	margin-top:0;
+}
+
+.block-login .form-label {
+	width: 25%;
+	float: left;
+	clear:left;
+	margin-bottom:1em;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+}
+
+.block-login .form-field {
+	width: 75%;
+	float: left;
+	margin-bottom:1em;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left: none;
+}
+
+.block-obs {
+	margin-top: 20em;
+	color: #c6c6c6;
+}

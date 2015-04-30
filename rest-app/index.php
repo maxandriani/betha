@@ -145,7 +145,7 @@ $response->responseData = array (
 // GET route
 $app->get ( '/', function () use($app) {
 	$app->render ( 401, array (
-			'msg' => 'Você não tem permissão para acessar esse endereço!' 
+			'message' => 'Você não tem permissão para acessar esse endereço!' 
 	) );
 } );
 
@@ -178,7 +178,7 @@ $app->group ( '/iptu', function () use($app, $response, $dataSource) {
 	
 	$app->get ( '/', function () use($app) {
 		$app->render ( 500, array (
-				'msg' => 'Você precisa informar um tipo de documento e seu respectivo valor: /inscricaoImobiliaria/{{value}}' 
+				'message' => 'Você precisa informar um tipo de documento e seu respectivo valor: /inscricaoImobiliaria/{{value}}' 
 		) );
 	} );
 	

@@ -113,6 +113,7 @@ require './config.php';
 		src="<?php the_url('js/controllers/iptu-login-controller.js') ?>"></script>
 	<script src="<?php the_url('js/directives/main-system.js') ?>"></script>
 	<script src="<?php the_url('js/directives/iptu-grid.js') ?>"></script>
+	<script src="<?php the_url('js/directives/form-validations.js') ?>"></script>
 
 </body>
 </html>

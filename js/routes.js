@@ -5,7 +5,11 @@
 angular.module("citizenApp").config(function ($routeProvider, $controllerProvider) {
 
 	$routeProvider.when('/', {
-		redirectTo: '/iptu/'
+		//redirectTo: '/clone.php',
+		templateUrl: 'views/global/not-implemented.html',
+		controller: function(){
+	        window.location.href = CONFIG.url + 'clone.php';
+	    }
     });
 	
 	$routeProvider.when('/iptu/', {

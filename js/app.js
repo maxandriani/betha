@@ -15,7 +15,7 @@ angular.module("citizenApp").filter('numberFixedLen', function () {
 angular.module("citizenApp").filter('inscricaoImobiliaria', function () {
     return function(a,b){
     	var v;
-    	var r = /([\d]{2}\.?[\d]{2}\.?[\d]{3}\.?[\d]{4}\.?[\d]{3}\.?)([\d]{1,4})/;
+    	var r = /^[\d]{2}\.?[\d]{2}\.?[\d]{3}\.?[\d]{4}\.?[\d]{3}\.?[\d]{1,4}$/;
         if (b){
         	v = r.test(a);
         } else {
@@ -30,7 +30,7 @@ angular.module("citizenApp").filter('inscricaoImobiliaria', function () {
 angular.module("citizenApp").filter('cpf', function () {
     return function(a,b){
         var v;
-    	var r = /[\d]{3}[\.\-]?[\d]{3}[\.\-]?[\d]{3}[\.\-]?[\d]{2}/;
+    	var r = /^[\d]{3}[\.\-]?[\d]{3}[\.\-]?[\d]{3}[\.\-]?[\d]{2}$/;
         if (b){
         	v = r.test(a);
         } else {
@@ -45,7 +45,7 @@ angular.module("citizenApp").filter('cpf', function () {
 angular.module("citizenApp").filter('cnpj', function () {
     return function(a,b){
     	var v;
-    	var r = /[\d]{2}[\.\-]?[\d]{3}[\.\-]?[\d]{3}[\.\-\/]?[\d]{4}[\.\-]?[\d]{2}/;
+    	var r = /^[\d]{2}[\.\-]?[\d]{3}[\.\-]?[\d]{3}[\.\-\/]?[\d]{4}[\.\-]?[\d]{2}$/;
         if (b){
         	v = r.test(a);
         } else {

@@ -3,4 +3,144 @@
 <!-- // breadcrumb -->
 
 <!-- Login blocks -->
+<div class="block-login-choise row">
+	
+	<!-- contributorLogin -->
+	<div class="col-sm-4">
+	<div class="block-login contributor-login">
+		<h2>Acessar Guias de IPTU vinculados em meu CPF</h2>
+		
+		<form name="cpfForm" 
+			ng-submit="accessWithCpf(doc.cpf)"
+			novalidate>
+			
+			<div class="input-feedback has-feedback" 
+				ng-class="{
+					'has-error': cpfForm.cpf.$error.invalid_cpf && cpfForm.cpf.$touched,
+					'has-success': cpfForm.cpf.$valid
+				}">
+				
+			<label class="control-label form-control form-label" for="contributor-cpf">CPF:</label>
+			<input class="form-control form-field field-text" id="contributor-cpf" name="cpf" type="text" 
+					ng-model="doc.cpf" 
+					placeholder="000.000.000-00"
+					cpf
+					required>
+					</div>
+			
+			<div class="alert alert-danger"
+				ng-show="
+						cpfForm.cpf.$invalid &&
+						cpfForm.cpf.$touched && 
+						cpfForm.cpf.$viewValue"
+			 	role="alert">
+			 	<strong>Atenção:</strong> O CPF informado parece conter erros, por favor, verifique!
+			</div>
+			
+			<div class="alert alert-warning"
+				ng-show="ERROR.EMPTY_CPF"
+			 	role="alert">
+			 	<strong>Atenção:</strong> Você precisa infromar um CPF!
+			</div>
+			
+			<input class="btn btn-primary btn-submit" type="submit" value="Acessar com CPF">
+		</form>
+	</div>
+	</div>
+	<!-- // contributor Login -->
+	
+	<!-- companyLogin -->
+	<div class="col-sm-4">
+	<div class="block-login contributor-login">
+		<h2>Acessar Guias de IPTU vinculados em minha CNPJ</h2>
+		
+		<form name="cnpjForm" 
+			ng-submit="accessWithCnpj(doc.cnpj)"
+			novalidate>
+		
+			<div class="input-feedback has-feedback" 
+				ng-class="{
+					'has-error': cnpjForm.cnpj.$error.invalid_cnpj && cnpjForm.cnpj.$touched,
+					'has-success': cnpjForm.cnpj.$valid
+				}">
+				
+			<label class="control-label form-control form-label" for="contributor-cnpj">CNPJ:</label>
+			<input class="form-control form-field field-text" id="contriburot-cnpj" name="cnpj" type="text" 
+					ng-model="doc.cnpj" 
+					placeholder="00.000.000/0000-00"
+					cnpj
+					required>
+					</div>
+			
+			<div class="alert alert-danger"
+				ng-show="
+						cnpjForm.cnpj.$invalid &&
+						cnpjForm.cnpj.$touched && 
+						cnpjForm.cnpj.$viewValue"
+			 	role="alert">
+			 	<strong>Atenção:</strong> A CNPJ informada parece conter erros, por favor, verifique!
+			</div>
+			
+			<div class="alert alert-warning"
+				ng-show="ERROR.EMPTY_CNPJ"
+			 	role="alert">
+			 	<strong>Atenção:</strong> Você precisa infromar uma CNPJ!
+			</div>
+			
+			<input class="btn btn-primary btn-submit" type="submit" value="Acessar com CNPJ">
+		</form>
+	</div>
+	</div>
+	<!-- // company Login -->
+	
+	<!-- realstateLogin -->
+	<div class="col-sm-4">
+	<div class="block-login contributor-login">
+		<h2>Acessar Guias de IPTU pelo nº de inscrição imobiliária</h2>
+		
+		<form name="inscricaoImobiliariaForm" 
+			ng-submit="accessWithInscricaoImobiliaria(doc.inscricaoImobiliaria)"
+			novalidate>
+		
+			<div class="input-feedback has-feedback" 
+				ng-class="{
+					'has-error':   	inscricaoImobiliariaForm.inscricaoImobiliaria.$error.invalid_inscricaoImobiliaria && 
+									inscricaoImobiliariaForm.inscricaoImobiliaria.$touched,
+					'has-success': 	inscricaoImobiliariaForm.inscricaoImobiliaria.$valid
+				}">
+				
+			<label class="control-label form-control form-label" for="contributor-inscricaoImobiliaria">Insc.:</label>
+			<input class="form-control form-field field-text" id="contributor-inscricaoImobiliaria" name="inscricaoImobiliaria" type="text" 
+					ng-model="doc.inscricaoImobiliaria" 
+					placeholder="00.00.000.0000.000.0000"
+					inscricaoImobiliaria
+					required>
+					</div>
+			
+			<div class="alert alert-danger"
+				ng-show="
+						inscricaoImobiliariaForm.inscricaoImobiliaria.$invalid &&
+						inscricaoImobiliariaForm.inscricaoImobiliaria.$touched && 
+						inscricaoImobiliariaForm.inscricaoImobiliaria.$viewValue"
+			 	role="alert">
+			 	<strong>Atenção:</strong> A inscrição Imobiliária informada parece conter erros, por favor, verifique!
+			</div>
+			
+			<div class="alert alert-warning"
+				ng-show="ERROR.EMPTY_INSCRICAOIMOBILIARIA"
+			 	role="alert">
+			 	<strong>Atenção:</strong> Você precisa infromar uma Inscrição Imobiliária!
+			</div>
+			
+			<input class="btn btn-primary btn-submit" type="submit" value="Acessar com Insc.">
+		</form>
+	</div>
+	</div>
+	<!-- // realstate Login -->
+	
+	<!-- Access Info -->
+	<div class="block-obs"><p><strong>Dados para acesso: </strong> CPF: 061.693.639-75, CNPJ: 11.811.397/0001-18, Insc: 01.01.017.0720.002.01</p></div>
+	<!-- // Access Info -->
+
+</div>
 <!-- // Login blocks -->
