@@ -17,8 +17,8 @@ define ( 'ERROR_WORNG_ENTIDADE_VALUE', 'Entidade não encontrada' );
 require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader ();
 
-require 'jsonApi/JsonApiMiddleware.php';
-require 'jsonApi/JsonApiView.php';
+require 'jsonAPI/JsonApiMiddleware.php';
+require 'jsonAPI/JsonApiView.php';
 
 $slim_config = array ();
 $slim_config ['debug'] = true; // Set debug true for development version | production = false
